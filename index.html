@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>PureRandomStudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+
+<!--STYLE-->
+<style>
+    body {background-color:rgb(0, 0, 0); height: 100in;}
+</style>
+
+<!--BODY-->
+<body>
+<div>
+    <!-- Nav bar -->
+    <div>
+        <div class="w3-row">
+            <div class="w3-col s4 w3-block w3-center">               
+                <a href="#" style="border:3px solid white" class="w3-button w3-large w3-black w3-round-xxlarge w3-panel w3-hide-small">Home</a>
+            </div>
+            <div class="w3-col s4 w3-block w3-center">               
+                <a href="#" style="border:3px solid white" class="w3-button w3-large w3-black w3-round-xxlarge w3-panel w3-hide-small">Blender</a>
+            </div>
+            <div class="w3-col s4 w3-block w3-center">               
+                <a href="#" style="border:3px solid white" class="w3-button w3-large w3-black w3-round-xxlarge w3-panel w3-hide-small">Downloads</a>
+            </div>
+        </div>
+
+        <div class="w3-top">
+            <div id="show" class="w3-container w3-center w3-padding w3-hide-large w3-hide-medium">
+                <a style="border:3px solid white" class=" w3-round-xxlarge w3-black w3-bar-item w3-large w3-button w3-right" onclick="smallScreen()">&#9776;</a>        
+            </div>
+            
+
+            <div id="dropdownSmall" style="margin-top: 40px;" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-padding w3-top">
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Home</a>
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Blender</a>
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Downloads</a>
+            </div>
+            <div id="dropdownLarge" style="width: auto; float: right; margin-right: 1%;" class="w3-bar-block w3-hide w3-hide-small w3-padding w3-top">
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Home</a>
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Blender</a>
+                <a href="#" style="border:3px solid white" class="w3-bar-item w3-black w3-button w3-center w3-round-xxlarge w3-panel">Downloads</a>
+            </div>
+        </div> 
+        
+    </div> 
+    <!-----------> 
+</div>
+      
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        var x = document.getElementById("dropdownSmall");
+        var z = document.getElementById("dropdownLarge");
+        function scrollFunction() {
+            var y = document.getElementById("show");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                y.className = y.className.replace(" w3-hide-large w3-hide-medium", " w3-show w3-animate-top")
+                console.log(window.onscroll)
+            } else {
+                y.className = y.className.replace(" w3-show", " w3-hide-large w3-hide-medium");
+                z.className = z.className.replace(" w3-show", " ");
+            }
+            }
+
+        function smallScreen() {
+
+          if (x.className.indexOf(" w3-show") == -1|| z.className.indexOf(" w3-show") == -1) {
+            x.className += " w3-show w3-animate-right";
+            z.className += " w3-show w3-animate-right";
+          } else { 
+            x.className = x.className.replace(" w3-show w3-animate-right", " ");
+            z.className = z.className.replace(" w3-show w3-animate-right", " ");
+          }
+          console.log(x)
+          console.log(z)
+
+        }
+    </script>
+
+</body>
+
+</html>
